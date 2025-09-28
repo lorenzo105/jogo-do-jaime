@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo submarino</title>
+   <style>
+    body{
+        margin:0;
+        height:100vh;
+        /* overflow: hidden; */
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        background:linear-gradient(to bottom , #0cc0df, #1800ad);
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+        border:none;
+        border-radius: 8px;
+        background: white;
+        color: black;
+    }
+
+    #oceano {
+        position: relative;
+        width:100%;
+        height: 85%;
+        overflow: hidden;
+
+    }
+
+#submarino { 
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        transition: top 0.7s ease;
+        top: 10%;
+}
+
+#info{
+margin-top: 10px;
+font-size: 18px;
+min-height: 40px; 
+
+}
+
+   </style>
+</head>
+<body>
+    <div id="oceano">
+
+        <img src="New Piskel.gif" alt="" id="submarino">
+    </div>
+    <div id="info">
+
+    </div>
+
+   <button id="mergulhar">mergulhar</button>
+   <!-- <button id="reiniciar">reiniciar</button> -->
+
+   <script>
+    const infos = [
+        "info 01",
+        "info 02",
+        "info 03",
+        "info 04",
+        "info 05",
+    ];
+
+    let index=0;
+    let profundidade=10;
+
+    const submarino=document.getElementById("submarino");
+    const info=document.getElementById("info");
+    const botao=document.getElementById("mergulhar");
+
+    botao.addEventListener("click" , ()=>{
+    if(index<infos.length){
+        profundidade+=15;
+        submarino.style.top = profundidade + "%";
+        info.textContent = infos[index];
+        index++;
+    }
+    else {
+        info.textContent = "Fim da exploração!";
+    }
+    }); 
+
+   </script>
+    
+</body>
+</html>
