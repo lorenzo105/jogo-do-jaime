@@ -7,32 +7,31 @@
    <style>
     body{
         margin:0;
-        height:100vh;
+        height: 110vh;
         /* overflow: hidden; */
         display: flex;
         justify-content:center;
         align-items:center;
         flex-direction:column;
         background:linear-gradient(to bottom , #0cc0df, #1800ad);
-        font-family: Arial, sans-serif;
+        font-family: Arial black, sans-serif;
         color: white;
     }
-
     button {
         margin-top: 10px;
-        padding: 10px 20px;
-        font-size: 14px;
-        border:none;
+        padding: 15px 30px;
+        font-size: 20px;
+        border:black;
         border-radius: 8px;
         background: white;
-        color: black;
+        color: rgb(37, 83, 162);
     }
 
     #oceano {
         position: relative;
         width:100%;
         height: 85%;
-        overflow: hidden;
+        overflow: visible;
 
     }
 
@@ -40,15 +39,20 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 120px;
+        width: 100px;
         transition: top 0.7s ease;
         top: 10%;
 }
 
 #info{
-margin-top: 10px;
-font-size: 18px;
-min-height: 40px; 
+     color: rgb(111, 0, 255);
+     background: white;
+    border-radius: 8px;
+    border: black;
+    padding: 10px;
+    margin-top: 0px;
+    font-size: 20px;
+    min-height: 40px; 
 
 }
 
@@ -57,7 +61,7 @@ min-height: 40px;
 <body>
     <div id="oceano">
 
-        <img src="New Piskel.gif" alt="" id="submarino">
+        <img src="New Piskel (1).gif" alt="" id="submarino">
     </div>
     <div id="info">
 
@@ -68,15 +72,17 @@ min-height: 40px;
 
    <script>
     const infos = [
-        "info 01",
-        "info 02",
-        "info 03",
-        "info 04",
-        "info 05",
+        "Hoje, vamos mergulhar em um dos lugares mais misteriosos do planeta: o fundo do mar. Uma região que ainda é pouco explorada e que esconde segredos incríveis. Vamos descobrir juntos alguns dos mistérios que se escondem nas profundezas do oceano",
+        "Curiosidade 1:O oceano cobre mais de 70% da superfície da Terra, mas ainda assim, sabemos muito pouco sobre o que se passa lá embaixo. O fundo do mar é um lugar quase alienígena, com condições extremas de pressão e temperatura que desafiam a nossa compreensão",
+        "Curiosidade 2:Você sabia que existem montanhas submarinas que são maiores do que o Monte Everest? Sim, elas são formadas por vulcões submarinos e podem ter picos que se elevam milhares de metros acima do fundo do mar",
+        "Curiosidade 3:A Fossa das Marianas é o lugar mais profundo do oceano, com mais de 11.000 metros de profundidade. É um lugar tão profundo que a pressão é tão grande que apenas alguns submarinos conseguem chegar lá",
+        "Curiosidade 4:O fundo do mar é lar de criaturas bioluminescentes que produzem luz própria para se comunicar, atrair presas ou se defender de predadores. É um mundo de luz e sombra, onde a bioluminescência é uma ferramenta essencial para a sobrevivência",
+        "Curiosidade 5:O fundo do mar é lar de ecossistemas únicos, como os recifes de coral e as fontes hidrotermais. Esses ecossistemas são sustentados por organismos que podem sobreviver em condições extremas, como altas temperaturas e pressão",
+        "Conclusão:O fundo do mar é um lugar incrível e misterioso que ainda tem muito a nos ensinar. Com a exploração e a pesquisa, podemos descobrir novos segredos e entender melhor o papel do oceano no nosso planeta. Vamos continuar a explorar e proteger esse recurso valioso para as gerações futuras",
     ];
 
     let index=0;
-    let profundidade=10;
+    let profundidade=15;
 
     const submarino=document.getElementById("submarino");
     const info=document.getElementById("info");
@@ -84,7 +90,7 @@ min-height: 40px;
 
     botao.addEventListener("click" , ()=>{
     if(index<infos.length){
-        profundidade+=15;
+        profundidade+=10;
         submarino.style.top = profundidade + "%";
         info.textContent = infos[index];
         index++;
